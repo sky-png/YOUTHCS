@@ -1,11 +1,10 @@
-# 快手视频刷金币测试，抓包获取secrets
 
-name: 快手视频浏览
+name: 电视家
 
 on:
   workflow_dispatch:
   schedule:
-     - cron: '*/30 2,8,16 * * *'
+     - cron: '*/15 4,12,19,23 * * *'
   watch:
     types: started
 jobs:
@@ -13,7 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     env:
-        KUAISHOUMV: ${{ secrets.KUAISHOUMV }}
+        DSJ_HEADERS: ${{ secrets.DSJ_HEADERS }}
+        DSJ_DRAWAL: ${{ secrets.DSJ_DRAWAL }}
         TZ: Asia/shanghai
     steps:
       - name: Checkout
@@ -27,12 +27,13 @@ jobs:
         run: |
           cd ~/Scripts
           npm install
-      - name: '运行 【快手视频】'
-        if: env.KUAISHOUMV
+      - name: '运行 【电视家】'
+        if: env.DSJ_HEADERS
         run: |
           cd ~/Scripts
-          node Task/Auto_Kuaishou.js
+          node Task/dianshijia.js
         env:
+          DSJ_NOTIFY_CONTROL: ${{ secrets.DSJ_NOTIFY_CONTROL }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
