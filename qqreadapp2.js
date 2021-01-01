@@ -213,8 +213,8 @@ function qedssign() {
 
 //$.setdata(process.env.QQREAD_COOKIE,'checkinheader')
 
-$.setdata(process.env.QQREAD_COOKIE.split("\n")[0],'checkinheader')
-$.setdata(process.env.QQREAD_COOKIE.split("\n")[1],'punchCardheader')
+$.setdata(process.env.QQREAD_COOKIE2.split("\n")[0],'checkinheader')
+$.setdata(process.env.QQREAD_COOKIE2.split("\n")[1],'punchCardheader')
 
 //$.setdata(process.env.QQREADER_COOKIE, 'punchCardheader')
 
