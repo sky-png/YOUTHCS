@@ -3,7 +3,7 @@ name: QQ阅读APP
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/30 */2 * * *"
+    - cron: "*/20 * * * *"
   watch:
     types: [started]
 
