@@ -24,8 +24,8 @@ jobs:
         run: |
           node qqreadapp2.js
         env:
-          QQREAD_COOKIE: ${{ secrets.QQREAD_COOKIE2 }}
-          QQREADER_COOKIE: ${{ secrets.QQREADER_COOKIE }}
+          QQREAD_COOKIE: ${{ secrets.QQREADAPP_HEADER }}
+          QQREADER_COOKIE: ${{ secrets.QQREADAPP_VIDEOHD }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
